@@ -127,8 +127,8 @@ This starts:
 
 ## GitHub
 
-[GitHub Repository](https://github.com/your-username/your-repo)
+[GitHub Repository](https://github.com/Arun979321/Inventory-Order-Management-System)
 
 ## Docker Image
 
-[Docker Hub Image](https://hub.docker.com/r/your-username/your-image)
+[Docker Hub Image](https://hub.docker.com/r/arun979321/inventory-management)
