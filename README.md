@@ -120,10 +120,9 @@ This starts:
 
 | Service  | URL                              |
 | -------- | -------------------------------- |
-| Frontend | *[Vercel/Netlify URL]*           |
-| Backend  | *[Railway/Render URL]*           |
-| API Docs | *[Backend URL]/docs*             |
-| Docker   | *[Docker Hub URL]*               |
+| Frontend | *https://inventory-order-management-alpha.vercel.app/*           |
+| Backend  | *https://inventory-order-management-system-wxl9.onrender.com*           |
+| Docker   | *https://hub.docker.com/repository/docker/arun979321/inventory-management/general*               |
 
 ## GitHub
 
