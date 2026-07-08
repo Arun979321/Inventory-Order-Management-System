@@ -1,5 +1,11 @@
 import client from './client';
 
+export const authAPI = {
+  login: (data) => client.post('/api/auth/login', data),
+  register: (data) => client.post('/api/auth/register', data),
+  me: () => client.get('/api/auth/me'),
+};
+
 export const productsAPI = {
   getAll: () => client.get('/api/products'),
   get: (id) => client.get(`/api/products/${id}`),

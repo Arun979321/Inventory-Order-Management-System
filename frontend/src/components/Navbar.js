@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 const links = [
   { to: '/', label: 'Dashboard' },
@@ -11,6 +12,9 @@ const links = [
 
 export default function Navbar() {
   const location = useLocation();
+  const { user, logout } = useAuth();
+
+  if (!user) return null;
 
   return (
     <nav style={styles.nav}>
@@ -28,6 +32,8 @@ export default function Navbar() {
             {link.label}
           </Link>
         ))}
+        <span style={{ color: '#888', margin: '0 4px' }}>{user.username}</span>
+        <button onClick={logout} style={styles.logoutBtn}>Logout</button>
       </div>
     </nav>
   );

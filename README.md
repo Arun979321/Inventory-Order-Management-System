@@ -41,6 +41,23 @@ A full-stack, containerized web application for managing products, customers, or
 
 ## Setup
 
+### Clone & Configure
+
+```powershell
+git clone https://github.com/Arun979321/Inventory-Order-Management-System.git
+cd Inventory-Order-Management-System
+# Recommended on Windows — handle CRLF line endings automatically
+git config core.autocrlf true
+```
+
+**Common Git Workflow (PowerShell):**
+```powershell
+git checkout -b feature/your-feature-name
+git add .
+git commit -m "Describe your change"
+git push origin feature/your-feature-name
+```
+
 ### Local Development (without Docker)
 
 **Backend:**

@@ -118,5 +118,48 @@ class InventoryResponse(BaseModel):
         from_attributes = True
 
 
+class UserCreate(BaseModel):
+    username: str
+    email: str
+    password: str
+    role: str = "staff"
+
+
+class UserLogin(BaseModel):
+    username: str
+    password: str
+
+
+class UserResponse(BaseModel):
+    id: int
+    username: str
+    email: str
+    role: str
+    created_at: datetime
+
+    class Config:
+        from_attributes = True
+
+
+class TokenResponse(BaseModel):
+    access_token: str
+    token_type: str = "bearer"
+    user: UserResponse
+
+
+class ForgotPasswordRequest(BaseModel):
+    email: str
+
+
+class ResetPasswordRequest(BaseModel):
+    token: str
+    new_password: str
+
+
+class ForgotPasswordResponse(BaseModel):
+    message: str
+    reset_token: Optional[str] = None
+
+
 class InventoryUpdate(BaseModel):
     stock_quantity: int
