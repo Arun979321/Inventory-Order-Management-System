@@ -19,7 +19,11 @@ def send_reset_email(to_email: str, reset_token: str) -> None:
         f"This link expires in 60 minutes."
     )
 
-    with smtplib.SMTP(settings.smtp_host, settings.smtp_port) as server:
-        server.starttls()
-        server.login(settings.smtp_user, settings.smtp_password)
-        server.send_message(msg)
+    try:
+        with smtplib.SMTP(settings.smtp_host, settings.smtp_port, timeout=10) as server:
+            server.starttls()
+            server.login(settings.smtp_user, settings.smtp_password)
+            server.send_message(msg)
+    except OSError as e:
+        print(f"[EMAIL] Failed to send email to {to_email}: {e}")
+        print(f"[EMAIL] Reset link would be: {reset_link}")
